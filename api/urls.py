@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import create_checkout_session, stripe_webhook, get_stripe_public_key
+from .views import CreateCheckoutSessionView, GetStripePublishableKeyView
 
 urlpatterns = [
-    path('create-checkout-session/', create_checkout_session, name='create-checkout-session'),
-    path('config/', get_stripe_public_key, name='get-stripe-public-key'),
+    path('create-checkout-session/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
+    path('config/', GetStripePublishableKeyView.as_view(), name='get-stripe-publishable-key'),
 ]
